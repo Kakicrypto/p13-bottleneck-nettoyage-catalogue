@@ -307,6 +307,28 @@ Traçabilité des échanges IA : outil, prompt, contexte, résultat retenu.
 
 ---
 
+## Décision 15 — Structuration du dépôt Git définitif
+
+**Date** : après retour du chef de mission
+
+**Constat** : le Git initialisé plus tôt (Décision 6bis, dossier `axe_c_nettoyage`) n'était qu'un espace de travail technique brouillon, pas une structure présentable. Vu que ce dépôt alimentera le portfolio GitHub (Mission 2), restructuration en amont de la suite de l'implémentation.
+
+**Structure retenue** :
+```
+notebook/   → notebook P6 amélioré
+scripts/    → data_prep.py, schémas Pandera, génération du rapport
+docs/       → journal de bord (traçabilité)
+data/       → fichiers sources
+```
+
+**Correctifs de portabilité** : les chemins codés en dur (`/mnt/user-data/...`) dans `data_prep.py` et `rapport_anomalies.py` ont été remplacés par des chemins relatifs à la racine du dépôt — nécessaire pour que le projet fonctionne une fois cloné depuis GitHub par un tiers (recruteur, évaluateur).
+
+**Justification** : structurer le dépôt avant d'ajouter la dernière pièce technique (intégration notebook) évite de devoir tout réorganiser après coup, et anticipe l'usage final (portfolio public sur GitHub, cf. échange sur la Mission 2).
+
+**Statut** : dépôt initialisé, 1 commit ("Init dépôt projet 13"). Prêt pour la suite de l'implémentation.
+
+---
+
 ## Décisions à venir
 - [ ] Intégration finale dans le notebook P6
 - [ ] Documentation finale (mise en forme)
