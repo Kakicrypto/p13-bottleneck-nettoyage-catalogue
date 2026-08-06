@@ -329,7 +329,37 @@ data/       → fichiers sources
 
 ---
 
+## Décision 16 — Nettoyage des identifiants techniques du dépôt
+
+**Date** : après remarque du chef de mission sur l'apparition de son nom dans le repo public
+
+**Analyse du risque** (réalisée avant correction) : le nom du chef de mission apparaissant sur un repo GitHub public n'est **pas un risque réel** — c'est la norme professionnelle d'attribution du travail, et l'objectif même d'un portfolio est de permettre l'identification de l'auteur par un recruteur. Aucune donnée personnelle sensible, aucune donnée client tierce, aucun email réel n'était exposé.
+
+**Décision finale** : le nom du chef de mission est **conservé** dans le README et le journal de bord (cohérent avec l'usage portfolio). En revanche, deux éléments techniques "administratifs" sans valeur pour un lecteur externe sont nettoyés :
+- Nom de fichier du notebook : `Chiniard_Quentin_1_notebook_P6_ameliore.ipynb` (convention de dépôt plateforme école, avec ID d'upload résiduel) → renommé `notebook_p6_ameliore.ipynb`
+- Email d'auteur Git : remplacé par l'adresse "no-reply" fournie par GitHub (protège l'email réel tout en gardant l'attribution du nom)
+
+**Justification** : distinction entre exposition **intentionnelle** (nom, dans un contexte où c'est la norme et l'objectif) et résidu **technique non maîtrisé** (nom de fichier avec ID d'upload, email inventé non conforme aux bonnes pratiques Git/GitHub).
+
+---
+
+## Décision 17 — Intégration finale dans le notebook P6 (Lot 4 terminé)
+
+**Date** : intégration technique complète, validée par exécution de bout en bout
+
+**Travail réalisé** :
+- Correction des chemins de lecture des fichiers (`data/erp.xlsx` etc. au lieu de chemins absolus temporaires) pour la portabilité du dépôt
+- Ajout d'une nouvelle section "Étape 6 - Nettoyage automatisé du catalogue (Axe C)" avec : les 4 schémas Pandera (13 règles), la génération du rapport d'anomalies priorisé, l'export Excel formaté
+- **Validation de bout en bout** : le notebook complet (117 cellules) a été exécuté intégralement via `jupyter nbconvert --execute`, sans aucune erreur
+
+**Bug découvert et corrigé** (indépendant de l'axe C) : la cellule calculant la courbe de Lorenz / indice de Gini utilisait la colonne `ca_article` avant sa création (bug d'ordre d'exécution du P6 original, invisible tant que le notebook n'était exécuté que cellule par cellule dans le désordre). Corrigé en déplaçant la cellule après la création de `ca_article`. Ce type de bug renforce l'argument de la Décision 14 (fiabilité des vérifications manuelles vs automatisées) à l'échelle de tout le notebook, pas seulement du nettoyage.
+
+**Résultat de la validation en conditions réelles (dans le notebook, après les corrections manuelles déjà présentes dans le P6)** : **11 anomalies uniques** (9 critiques, 0 majeure, 2 mineures) — la catégorie "incohérence stock_status" (majeure) disparaît, ce qui **valide que la correction manuelle de la cellule 20 du P6 original fonctionnait correctement**. Le script standalone (`scripts/rapport_anomalies.py`), lui, tourne sur données brutes sans cette correction préalable et trouve 13 anomalies (2 majeures en plus) — différence normale et documentée, pas une incohérence.
+
+**Statut Lot 4** : **terminé**. Les 3 étapes de la mission (veille, cahier des charges, organisation projet) + l'implémentation technique (nettoyage automatisé intégré et validé) sont bouclées.
+
+---
+
 ## Décisions à venir
-- [ ] Intégration finale dans le notebook P6
-- [ ] Documentation finale (mise en forme)
+- [ ] Documentation finale (mise en forme du livrable 2)
 - [ ] Portfolio (Mission 2 — GitHub)
