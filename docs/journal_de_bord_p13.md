@@ -9,7 +9,7 @@ Ce document trace les décisions prises, les options comparées, et les justific
 
 ## Contexte du projet
 
-- **Base de travail** : notebook P6 "Analyse du stock et des ventes du site Bottleneck" (`1785759831827_Chiniard_Quentin_1_notebook_022026.ipynb`)
+- **Base de travail** : notebook P6 "Analyse du stock et des ventes du site Bottleneck" (`notebook_p6_ameliore.ipynb`)
 - **Nature des données** : 3 fichiers Excel (erp.xlsx, web.xlsx, liaison.xlsx) — vente de vins en ligne
 - **Dataset final après jointure** : 714 lignes, 24 colonnes (`df_complet`)
 - **Contenu existant du notebook P6** :
