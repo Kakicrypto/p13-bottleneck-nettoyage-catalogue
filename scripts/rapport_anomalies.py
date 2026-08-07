@@ -218,7 +218,7 @@ def generer_rapport():
             "source": "Fichier / table",
             "index": "Ligne concernée",
             "colonnes": "Colonne(s) concernée(s)",
-            "regles": "Règle(s) violée(s)",
+            "regles": "Règle(s) non respectée(s)",
             "valeurs": "Valeur(s) observée(s)",
             "priorite": "Priorité",
             "nb_regles_violees": "Nb règles violées",

@@ -360,6 +360,35 @@ data/       → fichiers sources
 
 ---
 
+## Décision 18 — Relecture critique du livrable de documentation par le chef de mission
+
+**Date** : après remise d'une première version du document Word (Mission 1, livrable 2)
+
+**Contexte** : le chef de mission a systématiquement relu le document avant acceptation, conformément à sa posture de validation à chaque étape du projet. 15 points de correction identifiés, tous pertinents :
+
+| # | Correction demandée | Nature |
+|---|---|---|
+| 1 | Retirer la mention "périmètre du machine learning" dans le résumé exécutif (aucun ML dans le livrable final) | Exactitude |
+| 2 | Préciser "LLM (Claude)" plutôt que "l'IA" de façon générique | Précision terminologique |
+| 3 | Retirer toute mention de "contrainte de temps" dans la justification du périmètre, recentrer sur l'arbitrage métier | Cohérence avec posture professionnelle (cf. Décisions 3, 4, 6) |
+| 4 | Préciser qu'une action humaine reste nécessaire pour la correction des anomalies (ex : vérification physique de stock) | Complétude |
+| 5 | Simplifier le titre "Critères de réussite / KPI" en "Critères de réussite" | Clarté |
+| 6 | Retirer les emojis de priorité (rendu incohérent selon les lecteurs/imprimantes, lisibilité) | Forme |
+| 7 | Remplacer le tableau de dates fixes du planning par un Gantt visuel basé sur le statut réel (moins figé, plus lisible) | Forme + exactitude (le planning à dates fixes était déjà dépassé) |
+| 8 | Renommer la colonne "Mitigation" en "Comment on y répond", ajouter le point de vérification avec le mentor/formateur | Accessibilité du vocabulaire + complétude |
+| 9 | Simplifier le point "versioning" en retirant la référence à la soutenance | Sobriété |
+| 10 | Expliciter pourquoi la validation porte sur chaque dataframe séparément plutôt que sur le seul dataframe fusionné (risque de perte d'anomalies via la jointure "inner") | Rigueur technique — argument non explicité jusqu'ici |
+| 11 | Remplacer "viole" par "déroge à" (registre de langue) | Forme |
+| 12 | Retirer la mention spécifique de l'outil "Jupyter nbconvert" (détail d'implémentation non représentatif si le chef de mission avait codé lui-même) | Neutralité |
+| 13 | Retirer les emojis du tableau de résultats (cohérence avec le point 6) | Forme |
+| 14 | Ajouter des estimations de temps de développement pour les prochaines pistes (crédibilité du scoping) | Complétude |
+| 15 | Ajouter le prompt de lancement du projet en tête de l'annexe traçabilité, retirer la mention "(reconstitué)" du titre de colonne | Traçabilité |
+
+**Corrections transverses effectuées suite au point 11** : le terme "Règle(s) violée(s)" a été remplacé par "Règle(s) non respectée(s)" dans `scripts/rapport_anomalies.py` et dans le notebook, pour une cohérence terminologique entre tous les livrables (pas seulement le document Word).
+
+**Justification de la démarche** : cette relecture illustre concrètement la méthodologie de contrôle qualité appliquée tout au long du projet — aucun livrable, y compris généré par IA, n'est accepté sans vérification critique par le chef de mission. Bon matériau pour la soutenance sur la question de la "rigueur de la documentation".
+
+---
+
 ## Décisions à venir
-- [ ] Documentation finale (mise en forme du livrable 2)
 - [ ] Portfolio (Mission 2 — GitHub)
