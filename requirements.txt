@@ -1,0 +1,18 @@
+# Dépendances du projet 13 — Bottleneck (notebook P6 amélioré)
+# Testé avec Python 3.12
+
+pandas==3.0.2
+numpy==2.4.4
+matplotlib==3.10.8
+seaborn==0.13.2
+plotly==6.9.0
+scipy==1.17.1
+statsmodels==0.14.6      # requis par plotly (trendline="ols") dans l'analyse prix/ventes
+openpyxl==3.1.5          # lecture des fichiers sources + export du rapport d'anomalies
+pandera==0.32.1          # validation automatisée du catalogue (axe C)
+
+# NB : great_expectations n'est volontairement pas listé ici. Il a été utilisé
+# uniquement pour le test comparatif documenté dans le journal de bord
+# (scripts/test_great_expectations.py) et n'est pas retenu dans la solution
+# finale. Pour rejouer ce script de comparaison précis, l'installer séparément :
+# pip install great_expectations

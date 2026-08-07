@@ -390,5 +390,17 @@ data/       → fichiers sources
 
 ---
 
+## Décision 19 — Annexe hypothèses + reproductibilité (requirements.txt)
+
+**Date** : complément suite à la revue des attendus de la Mission 1
+
+**Hypothèses** : le point "hypothèses" de la documentation (attendu explicite de la mission) était jusqu'ici implicite dans les décisions successives, jamais formalisé. Une première proposition de positionnement avant le cahier des charges a été challengée par le chef de mission : sur les 5 hypothèses identifiées, seules 3 (ML peu pertinent, Pandera > Great Expectations, absence de RGPD) ont réellement précédé et informé le cahier des charges ; les 2 autres (angles morts du P6, fiabilité de la correction stock) n'ont été découvertes qu'en cours d'implémentation. Positionner les 5 avant le CDC aurait reconstruit une chronologie inexacte. **Décision finale** : les 5 hypothèses sont regroupées dans une annexe dédiée (§8), avec une colonne "Impact sur le projet" ajoutée pour expliciter la conséquence concrète de chaque hypothèse vérifiée — le format annexe s'affranchit de la contrainte chronologique tout en gardant la démarche traçable.
+
+**Reproductibilité** : ajout d'un `requirements.txt` à la racine du dépôt, listant les dépendances réellement utilisées par le notebook (pandas, numpy, matplotlib, seaborn, plotly, scipy, statsmodels, openpyxl, pandera), avec versions figées. Great Expectations volontairement exclu (non retenu dans la solution finale), avec une note explicative pour permettre de rejouer `scripts/test_great_expectations.py` séparément si besoin.
+
+**Statut Mission 1** : livrables 1 et 2 complets. Reste la Mission 2 (portfolio).
+
+---
+
 ## Décisions à venir
 - [ ] Portfolio (Mission 2 — GitHub)
